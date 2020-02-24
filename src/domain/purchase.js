@@ -33,6 +33,51 @@ export default class Purchase {
 		}
 	}
 
+	toJSON() {
+		const items = this.sortedItems();
+		const lineItems = items.filter(item => item instanceof LineItem);
+		const discounts = items.filter(item => item instanceof Discount);
+		return {
+			items: lineItems.map(item => {
+				return {
+					sku: item.sku,
+					description: item.description,
+					pcs: item.pcs,
+					discount: item.totalDiscount,
+					price: item.totalPrice
+				};
+			}),
+			discounts: discounts.map(item => {
+				return {
+					description: item.description,
+					discount: item.totalDiscount
+				};
+			}),
+			totals: {
+				saved: this.totalDiscount,
+				shipping: this._shipping.cost,
+				price: this.totalPrice
+			}
+		};
+	}
+
+	/**
+	 * @private
+	 */
+	sortedItems() {
+		const items = this.items;
+		items.sort((a, b) => {
+			if (a instanceof LineItem && b instanceof LineItem) {
+				return a.sku > b.sku ? 1 : a.sku == b.sku ? 0 : -1;
+			} else if (a instanceof Discount && b instanceof LineItem) {
+				return 1;
+			} else if (a instanceof Discount && b instanceof Discount) {
+				return a.totalDiscount > b.totalDiscount ? 1 : -1;
+			}
+		});
+		return items;
+	}
+
 	/**
 	 * @returns {string} text representation of the entire {@link Purchase}, similar to
 	 *          what you might see in a printed receipt.
@@ -62,17 +107,7 @@ export default class Purchase {
 		topLine()
 		center("TESTMART");
 		center("");
-		const printedItems = this.items;
-		printedItems.sort((a, b) => {
-			if (a instanceof LineItem && b instanceof LineItem) {
-				return a.sku > b.sku ? 1 : a.sku == b.sku ? 0 : -1;
-			} else if (a instanceof Discount && b instanceof LineItem) {
-				return 1;
-			} else if (a instanceof Discount && b instanceof Discount) {
-				return a.totalDiscount > b.totalDiscount ? 1 : -1;
-			}
-		});
-		printedItems.forEach(item => {
+		this.sortedItems().forEach(item => {
 			if (item instanceof LineItem) {
 				const totalPriceBeforeDiscounts = item.totalPrice + item.totalDiscount;
 				spread(item.description, item.pcs);

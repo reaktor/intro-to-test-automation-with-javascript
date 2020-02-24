@@ -20,7 +20,7 @@ const purchaseCart = async (req, res) => {
   if (req.accepts(['text/plain', 'text/html'])) {
     return res.status(200).set('Content-Type', 'text/plain').send(purchase.toString());
   } else {
-    return res.status(200).json(purchase);
+    return res.status(200).json(purchase.toJSON());
   }
 };
 

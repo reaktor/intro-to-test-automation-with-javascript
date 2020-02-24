@@ -47,7 +47,8 @@ describe('Backend API', () => {
         .send()
         .expect(200)
         .then(function(res, err) {
-          console.log(res.text);
+          // Uncomment this to see what do we get back from the API:
+          //console.log(res.text);
         });
 
       // Let's request a JSON "receipt" for visual verification
@@ -57,7 +58,10 @@ describe('Backend API', () => {
         .send()
         .expect(200)
         .then(function(res, err) {
-          console.log(res.body);
+
+          // Uncomment this to see what do we get back from the API:
+          //console.log(res.body);
+
           assert.equal(res.body.totals.saved, 16945);
           assert.equal(res.body.totals.shipping, 0);
           assert.equal(res.body.totals.price, 17955);

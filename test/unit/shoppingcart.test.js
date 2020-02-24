@@ -2,12 +2,20 @@ var assert = require('chai').assert;
 
 import { ShoppingCart, Product, LineItem, Shipping } from '../../src/domain';
 
+/**
+ * {@link FixedShippingQuoteService} is a utility that we can use with the {@link ShoppingCart}
+ * to control how much shipping will cost (before any applicable discounts).
+ */
 class FixedShippingQuoteService extends Shipping.ShippingQuoteService {
 	constructor(fixedCost) {
 		super();
 		this.cost = fixedCost;
 	}
 
+	/**
+	 * Override the default implementation in {@link ShippingQuoteService#quote} to
+	 * return a fixed cost regardless of the selected service.
+	 */
 	quote() { return this.cost; }
 }
 

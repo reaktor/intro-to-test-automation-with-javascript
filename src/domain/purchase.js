@@ -132,18 +132,21 @@ export default class Purchase {
 	}
 
 	/**
-	 * Returns the {@link LineItem}s in this {@link Purchase}.
+	 * @returns {Array} Returns the {@link LineItem}s in this {@link Purchase}.
 	 */
 	get items() {
 		return this._lineItems;
 	}
 
+	/**
+	 * @returns {number} Returns the shipping cost of this {@link Purchase} after discounts, in cents.
+	 */
 	get shipping() {
 		return this._shipping.cost;
 	}
 
 	/**
-	 * Returns the total price of this {@link Purchase} after discounts in cents.
+	 * @returns {number} Returns the total price of this {@link Purchase} after discounts, in cents.
 	 */
 	get totalPrice() {
 		return this._lineItems.reduce((total, item) => {
@@ -159,7 +162,7 @@ export default class Purchase {
 	}
 
 	/**
-	 * Returns the total discounts applied to this {@link Purchase} in cents.
+	 * @returns {number} Returns the total discounts applied to this {@link Purchase} in cents.
 	 */
 	get totalDiscount() {
 		return this._lineItems.reduce((total, item) => {

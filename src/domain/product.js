@@ -39,40 +39,39 @@ export default class Product {
 	}
 
 	/**
-	 * Returns the SKU of this {@link Product}.
+	 * @returns {string} Returns the SKU of this {@link Product}.
 	 */
 	get sku() { return this._sku; }
 
 	/**
-	 * Returns the name of this {@link Product}.
+	 * @returns {string} Returns the name of this {@link Product}.
 	 */
 	get name() { return this._name; }
 
 	/**
-	 * Returns the effective price of this {@link Product}, based on the
+	 * @returns {number} Returns the effective price of this {@link Product}, based on the
 	 * {@link salePrice} if it's on sale, or the {@link regularPrice} if not.
 	 */
 	get price() { return this._salePrice || this._regularPrice; }
 
 	/**
-	 * Returns the regular price of this {@link Product}.
+	 * @returns {number} Returns the regular price of this {@link Product}.
 	 */
 	get regularPrice() { return this._regularPrice; }
 
 	/**
-	 * Returns the sale price of this {@link Product}, or `undefined` if
+	 * @returns {number} Returns the sale price of this {@link Product}, or `undefined` if
 	 * the {@link Product} is not on sale.
 	 */
 	get salePrice() { return this._salePrice; }
 
 	/**
-	 * Returns {true} if this {@link Product} is
-	 * on sale.
+	 * @returns {boolean} Returns `true` if this {@link Product} is on sale.
 	 */
 	get sale() { return this._salePrice != this._price; }
 
 	/**
-	 * Returns the discount in cents, from the regular price. If not on sale,
+	 * @returns {number} Returns the discount in cents, from the regular price. If not on sale,
 	 * will return `0`.
 	 */
 	get discount() { return this.regularPrice - this.price; }

@@ -5,6 +5,9 @@ import Product from './product';
 
 /**
  * @class Discount
+ * 
+ * {@link Discount} represents a discount applied to an entire purchase (as 
+ * opposed to a discount applied to a specific {@link Product}).
  */
 export class Discount {
 
@@ -19,8 +22,10 @@ export class Discount {
 		this._discount = discount;
 	}
 
+	/** @returns {string} Returns a description of the discount. */
 	get description() { return this._description; }
 
+	/** @returns {number} Returns the discount in cents. */
 	get totalDiscount() { return this._discount; }
 }
 
@@ -68,28 +73,28 @@ export class LineItem {
 		return discountedLineItem;
 	}
 
-	/** Returns the {@link Product} of this {@link LineItem}. */
+	/** @returns {Product} Returns the {@link Product} of this {@link LineItem}. */
 	get product() { return this._product; }
 
-	/** Returns the SKU of this {@link LineItem}'s {@link Product}. */
+	/** @returns {string} Returns the SKU of this {@link LineItem}'s {@link Product}. */
 	get sku() { return this.product.sku; }
 
-	/** Returns the description of this {@link LineItem}'s {@link Product}. */
+	/** @returns {string} Returns the description of this {@link LineItem}'s {@link Product}. */
 	get description() { return this.product.name.substring(0, 32); }
 
-	/** Returns the count of this {@link LineItem}'s {@link Product}s. */
+	/** @returns {number} Returns the count of this {@link LineItem}'s {@link Product}s. */
 	get pcs() { return this._pcs; }
 
-	/** Returns the unit price of this {@link LineItem}'s {@link Product}. */
+	/** @returns {number} Returns the unit price of this {@link LineItem}'s {@link Product} in cents. */
 	get unitPrice() { return this.product.price; }
 
 	/**
-	 * Returns the total discount applied to this {@link LineItem} in cents.
+	 * @returns {number} Returns the total discount applied to this {@link LineItem} in cents.
 	 */
 	get totalDiscount() { return this._totalDiscount; }
 
 	/**
-	 * Returns the total price of this {@link LineItem}'s {@link Product}s
+	 * @returns {number} Returns the total price of this {@link LineItem}'s {@link Product}s
 	 * in cents after discounts have been applied.
 	 */
 	get totalPrice() { return this.product.price * this._pcs; }

@@ -28,7 +28,6 @@ export class ShippingService {
 	static get FedexHomeDelivery() { return new ShippingService(fedexHomeDelivery); }
 
 	/**
-	 * @private
 	 * @param {string} name The name of this {@link ShippingService}.
 	 */
 	constructor(name) {
@@ -114,7 +113,8 @@ export class ShippingQuote extends ShippingInfo {
 	 * Creates a {@link ShippingInfo}.
 	 * 
 	 * @param {string} service The name of the selected shipping service
-	 *                 (e.g. UPS Ground or USPS Priority Mail).
+	 *                 (e.g. UPS Ground or USPS Priority Mail). Must be one of
+	 *                 the constants defined in {@link ShippingService}.
 	 * @param {string} address The delivery address.
 	 * @param {number} cost The cost of shipping, in cents.
 	 */
@@ -125,7 +125,7 @@ export class ShippingQuote extends ShippingInfo {
 	}
 
 	/**
-	 * Returns the shipping cost, in cents.
+	 * @returns {number} Returns the shipping cost, in cents.
 	 */
 	get cost() {
 		return this._cost;

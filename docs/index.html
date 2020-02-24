@@ -27,10 +27,34 @@
                 
                 <li><a
                   href='#discount'
-                  class="">
+                  class=" toggle-sibling">
                   Discount
-                  
+                  <span class='icon'>▸</span>
                 </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#discountdescription'
+                        class='regular pre-open'>
+                        #description
+                      </a></li>
+                      
+                      <li><a
+                        href='#discounttotaldiscount'
+                        class='regular pre-open'>
+                        #totalDiscount
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
@@ -192,6 +216,12 @@
                         href='#purchaseitems'
                         class='regular pre-open'>
                         #items
+                      </a></li>
+                      
+                      <li><a
+                        href='#purchaseshipping'
+                        class='regular pre-open'>
+                        #shipping
                       </a></li>
                       
                       <li><a
@@ -471,7 +501,72 @@
   
 
   
-    <div class='pre p1 fill-light mt0'>new Discount()</div>
+    <div class='pre p1 fill-light mt0'>new Discount(description: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, discount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>description</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    A name or description of this 
+<a href="#discount">Discount</a>
+.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>discount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The discount, in cents.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='discountdescription'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>description</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>description</div>
   
   
 
@@ -487,12 +582,86 @@
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        Returns a description of the discount.
+
+      
+    
+  
+
+  
+
+  
 
   
 
   
 
   
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='discounttotaldiscount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>totalDiscount</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>totalDiscount</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the discount in cents.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
 
   
 
@@ -668,8 +837,7 @@ s this
 
   
 
-  <p>Returns the <a href="#product">Product</a> of this <a href="#lineitem">LineItem</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>product</div>
   
   
@@ -685,6 +853,18 @@ s this
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#product">Product</a></code>:
+        Returns the 
+<a href="#product">Product</a>
+ of this 
+<a href="#lineitem">LineItem</a>
+.
+
+      
+    
   
 
   
@@ -715,8 +895,7 @@ s this
 
   
 
-  <p>Returns the SKU of this <a href="#lineitem">LineItem</a>'s <a href="#product">Product</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>sku</div>
   
   
@@ -732,6 +911,18 @@ s this
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        Returns the SKU of this 
+<a href="#lineitem">LineItem</a>
+'s 
+<a href="#product">Product</a>
+.
+
+      
+    
   
 
   
@@ -762,8 +953,7 @@ s this
 
   
 
-  <p>Returns the description of this <a href="#lineitem">LineItem</a>'s <a href="#product">Product</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>description</div>
   
   
@@ -779,6 +969,18 @@ s this
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        Returns the description of this 
+<a href="#lineitem">LineItem</a>
+'s 
+<a href="#product">Product</a>
+.
+
+      
+    
   
 
   
@@ -809,8 +1011,7 @@ s this
 
   
 
-  <p>Returns the count of this <a href="#lineitem">LineItem</a>'s <a href="#product">Product</a>s.</p>
-
+  
     <div class='pre p1 fill-light mt0'>pcs</div>
   
   
@@ -826,6 +1027,18 @@ s this
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the count of this 
+<a href="#lineitem">LineItem</a>
+'s 
+<a href="#product">Product</a>
+s.
+
+      
+    
   
 
   
@@ -856,8 +1069,7 @@ s this
 
   
 
-  <p>Returns the unit price of this <a href="#lineitem">LineItem</a>'s <a href="#product">Product</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>unitPrice</div>
   
   
@@ -873,6 +1085,18 @@ s this
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the unit price of this 
+<a href="#lineitem">LineItem</a>
+'s 
+<a href="#product">Product</a>
+ in cents.
+
+      
+    
   
 
   
@@ -903,8 +1127,7 @@ s this
 
   
 
-  <p>Returns the total discount applied to this <a href="#lineitem">LineItem</a> in cents.</p>
-
+  
     <div class='pre p1 fill-light mt0'>totalDiscount</div>
   
   
@@ -920,6 +1143,16 @@ s this
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the total discount applied to this 
+<a href="#lineitem">LineItem</a>
+ in cents.
+
+      
+    
   
 
   
@@ -950,9 +1183,7 @@ s this
 
   
 
-  <p>Returns the total price of this <a href="#lineitem">LineItem</a>'s <a href="#product">Product</a>s
-in cents after discounts have been applied.</p>
-
+  
     <div class='pre p1 fill-light mt0'>totalPrice</div>
   
   
@@ -968,6 +1199,19 @@ in cents after discounts have been applied.</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the total price of this 
+<a href="#lineitem">LineItem</a>
+'s 
+<a href="#product">Product</a>
+s
+in cents after discounts have been applied.
+
+      
+    
   
 
   
@@ -1104,8 +1348,7 @@ before sales, promo codes, or any other discounts.
 
   
 
-  <p>Returns the SKU of this <a href="#product">Product</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>sku</div>
   
   
@@ -1121,6 +1364,16 @@ before sales, promo codes, or any other discounts.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        Returns the SKU of this 
+<a href="#product">Product</a>
+.
+
+      
+    
   
 
   
@@ -1151,8 +1404,7 @@ before sales, promo codes, or any other discounts.
 
   
 
-  <p>Returns the name of this <a href="#product">Product</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>name</div>
   
   
@@ -1168,6 +1420,16 @@ before sales, promo codes, or any other discounts.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        Returns the name of this 
+<a href="#product">Product</a>
+.
+
+      
+    
   
 
   
@@ -1198,9 +1460,7 @@ before sales, promo codes, or any other discounts.
 
   
 
-  <p>Returns the effective price of this <a href="#product">Product</a>, based on the
-<a href="salePrice">salePrice</a> if it's on sale, or the <a href="regularPrice">regularPrice</a> if not.</p>
-
+  
     <div class='pre p1 fill-light mt0'>price</div>
   
   
@@ -1216,6 +1476,21 @@ before sales, promo codes, or any other discounts.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the effective price of this 
+<a href="#product">Product</a>
+, based on the
+
+<a href="salePrice">salePrice</a>
+ if it's on sale, or the 
+<a href="regularPrice">regularPrice</a>
+ if not.
+
+      
+    
   
 
   
@@ -1246,8 +1521,7 @@ before sales, promo codes, or any other discounts.
 
   
 
-  <p>Returns the regular price of this <a href="#product">Product</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>regularPrice</div>
   
   
@@ -1263,6 +1537,16 @@ before sales, promo codes, or any other discounts.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the regular price of this 
+<a href="#product">Product</a>
+.
+
+      
+    
   
 
   
@@ -1293,9 +1577,7 @@ before sales, promo codes, or any other discounts.
 
   
 
-  <p>Returns the sale price of this <a href="#product">Product</a>, or <code>undefined</code> if
-the <a href="#product">Product</a> is not on sale.</p>
-
+  
     <div class='pre p1 fill-light mt0'>salePrice</div>
   
   
@@ -1311,6 +1593,21 @@ the <a href="#product">Product</a> is not on sale.</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the sale price of this 
+<a href="#product">Product</a>
+, or 
+<code>undefined</code>
+ if
+the 
+<a href="#product">Product</a>
+ is not on sale.
+
+      
+    
   
 
   
@@ -1341,9 +1638,7 @@ the <a href="#product">Product</a> is not on sale.</p>
 
   
 
-  <p>Returns {true} if this <a href="#product">Product</a> is
-on sale.</p>
-
+  
     <div class='pre p1 fill-light mt0'>sale</div>
   
   
@@ -1359,6 +1654,18 @@ on sale.</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Returns 
+<code>true</code>
+ if this 
+<a href="#product">Product</a>
+ is on sale.
+
+      
+    
   
 
   
@@ -1389,9 +1696,7 @@ on sale.</p>
 
   
 
-  <p>Returns the discount in cents, from the regular price. If not on sale,
-will return <code>0</code>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>discount</div>
   
   
@@ -1407,6 +1712,17 @@ will return <code>0</code>.</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the discount in cents, from the regular price. If not on sale,
+will return 
+<code>0</code>
+.
+
+      
+    
   
 
   
@@ -1579,8 +1895,7 @@ what you might see in a printed receipt.
 
   
 
-  <p>Returns the <a href="#lineitem">LineItem</a>s in this <a href="#purchase">Purchase</a>.</p>
-
+  
     <div class='pre p1 fill-light mt0'>items</div>
   
   
@@ -1596,6 +1911,74 @@ what you might see in a printed receipt.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        Returns the 
+<a href="#lineitem">LineItem</a>
+s in this 
+<a href="#purchase">Purchase</a>
+.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='purchaseshipping'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>shipping</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>shipping</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the shipping cost of this 
+<a href="#purchase">Purchase</a>
+ after discounts, in cents.
+
+      
+    
   
 
   
@@ -1626,8 +2009,7 @@ what you might see in a printed receipt.
 
   
 
-  <p>Returns the total price of this <a href="#purchase">Purchase</a> after discounts in cents.</p>
-
+  
     <div class='pre p1 fill-light mt0'>totalPrice</div>
   
   
@@ -1643,6 +2025,16 @@ what you might see in a printed receipt.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the total price of this 
+<a href="#purchase">Purchase</a>
+ after discounts, in cents.
+
+      
+    
   
 
   
@@ -1673,8 +2065,7 @@ what you might see in a printed receipt.
 
   
 
-  <p>Returns the total discounts applied to this <a href="#purchase">Purchase</a> in cents.</p>
-
+  
     <div class='pre p1 fill-light mt0'>totalDiscount</div>
   
   
@@ -1690,6 +2081,16 @@ what you might see in a printed receipt.
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the total discounts applied to this 
+<a href="#purchase">Purchase</a>
+ in cents.
+
+      
+    
   
 
   
@@ -2873,7 +3274,10 @@ pending <a href="#purchase">Purchase</a> with all the applicable discounts appli
           <div>
             <span class='code bold'>service</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The name of the selected shipping service
-(e.g. UPS Ground or USPS Priority Mail).
+(e.g. UPS Ground or USPS Priority Mail). Must be one of
+the constants defined in 
+<a href="#shippingservice">ShippingService</a>
+.
 
           </div>
           
@@ -2926,8 +3330,7 @@ pending <a href="#purchase">Purchase</a> with all the applicable discounts appli
 
   
 
-  <p>Returns the shipping cost, in cents.</p>
-
+  
     <div class='pre p1 fill-light mt0'>cost</div>
   
   
@@ -2943,6 +3346,14 @@ pending <a href="#purchase">Purchase</a> with all the applicable discounts appli
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Returns the shipping cost, in cents.
+
+      
+    
   
 
   

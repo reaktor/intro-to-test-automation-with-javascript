@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const app = require('../app');
+const debug = require('debug')('api');
+const http = require('http');
+
+app.set('port', process.env.PORT || 4000);
+
+const server = app.listen(app.get('port'), () => {
+  debug(`Express running → PORT ${server.address().port}`);
+});

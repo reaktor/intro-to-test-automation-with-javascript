@@ -5,11 +5,8 @@
   "main": "src/server/server.js",
   "scripts": {
     "start": "DEBUG=api nodemon --harmony ./src/backend/bin/www",
-    "test": "npm run test-unit && npm run test-integration",
-    "test-unit-watch": "mocha --require babel-core/register --watch --watch-extensions js test/unit/**/*.test.js",
-    "test-unit": "mocha --require babel-core/register test/unit/**/*.test.js",
-    "test-integration": "mocha --require babel-core/register test/integration/**/*.test.js",
-    "test-samples": "mocha --require babel-core/register test/samples/**/*.test.js",
+    "test": "jest",
+    "watch": "jest --watchAll",
     "docs": "rm -rf ./docs ; npx documentation build src/domain/index.js -f html -o ./docs"
   },
   "jest": {
